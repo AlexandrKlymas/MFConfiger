@@ -1,5 +1,5 @@
 {
-  "name": "klym/multifields-parser",
+  "name": "klym/multifields-configer",
   "type": "EvolutionCMS-Package",
   "license": "GPL-2.0",
   "description": "Evolution CMS plugin Multifields config manager",
