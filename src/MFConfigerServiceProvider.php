@@ -12,5 +12,13 @@ class MFConfigerServiceProvider extends \EvolutionCMS\ServiceProvider
         MakeTVCommand::class,
     ]
 
-    $this->commands($this->commands);
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->commands($this->commands);
+    }
 }
