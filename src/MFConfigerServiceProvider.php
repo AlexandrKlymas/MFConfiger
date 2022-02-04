@@ -2,7 +2,7 @@
 
 namespace EvolutionCMS\MFConfiger;
 
-class MFConfiger extends \EvolutionCMS\ServiceProvider
+class MFConfigerServiceProvider extends \EvolutionCMS\ServiceProvider
 {
     protected string $namespace = 'MFConfiger';
 }
