@@ -11,4 +11,6 @@ class MFConfigerServiceProvider extends \EvolutionCMS\ServiceProvider
     protected $commands = [
         MakeTVCommand::class,
     ]
+
+    $this->commands($this->commands);
 }
