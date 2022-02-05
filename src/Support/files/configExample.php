@@ -1,3 +1,3 @@
 <?php
 
-return (new \EvolutionCMS\MFConfigure\Managers\MFConfigureManager())->getConfig('[+TV_NAME+]');
+return (new \EvolutionCMS\MFConfigure\Managers\MFConfigureManager())->getConfig(basename(__FILE__));
