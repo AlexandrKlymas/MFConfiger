@@ -1,5 +1,5 @@
 {
-  "name": "klym/multifields-configer",
+  "name": "klym/multifields-configure",
   "type": "EvolutionCMS-Package",
   "license": "GPL-2.0",
   "description": "Evolution CMS plugin Multifields config manager",
@@ -14,13 +14,13 @@
   },
   "autoload": {
     "psr-4": {
-      "EvolutionCMS\\MFConfiger\\": "src"
+      "EvolutionCMS\\MFConfigure\\": "src"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "EvolutionCMS\\MFParser\\MFConfigerServiceProvider"
+        "EvolutionCMS\\MFConfigure\\MFConfigureServiceProvider"
       ]
     }
   }
