@@ -2,7 +2,7 @@
 
 namespace EvolutionCMS\MFConfigure\Support;
 
-class MFConfigureHelper
+class MFCHelper
 {
     protected string $mfConfigPath;
     protected string $tvNamePlaceholder;
@@ -27,39 +27,18 @@ class MFConfigureHelper
         return $this->mfConfigPath;
     }
 
-    public function buildConfig(string $tvName)
+    public function buildConfig(string $tvName, string $tvManagerClassName)
     {
         $this->createTV($tvName);
-        $this->createTVDir($tvName);
-        $this->createConfig($tvName);
+        $this->createConfig($tvName,$tvManagerClassName);
     }
 
-    protected function createTVDir($tvName)
-    {
-        $tvPath = $this->mfConfigPath.$tvName;
-
-        $dirExist = file_exists($tvPath);
-
-        if(!$dirExist){
-            mkdir($tvPath,0644);
-        }
-    }
-
-    protected function createConfig($tvName)
+    protected function createConfig(string $tvName,string $tvManagerClassName)
     {
         file_put_contents(
             MFCConfig::getMFTVsPath().$tvName.'.php',
-            $this->replaceTVNamePlaceholder(
-                $tvName,
-                file_get_contents($this->configExpPath),
-                $this->tvNamePlaceholder
-            )
+            '<?php . \n \n (new '.$tvManagerClassName.'())->getConfig(basename(__FILE__,".php"));'
         );
-    }
-
-    protected function replaceTVNamePlaceholder($tvName,$configExampleContents, $tvNamePlaceholder)
-    {
-        return str_replace($tvNamePlaceholder,$tvName,$configExampleContents);
     }
 
     protected function createTV(string $tvName)
