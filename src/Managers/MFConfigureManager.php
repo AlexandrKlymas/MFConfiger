@@ -1,11 +1,11 @@
 <?php
 
-namespace EvolutionCMS\MFConfigure\Services;
+namespace EvolutionCMS\MFConfigure\Managers;
 
 
 use EvolutionCMS\MFConfigure\Support\MFCConfig;
 
-class MFConfigureService
+class MFConfigureManager
 {
     public function getConfig(string $tvName): array
     {
