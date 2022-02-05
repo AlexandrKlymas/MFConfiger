@@ -2,47 +2,60 @@
 
 namespace EvolutionCMS\MFConfigure\Support;
 
+use EvolutionCMS\Models\SiteTmplvar;
+use Exception;
+
 class MFCHelper
 {
-    protected string $mfConfigPath;
-    protected string $tvNamePlaceholder;
-    protected string $configExpPath;
-    protected TVHelper $tvHelper;
+    protected string $pluginsPath = MODX_BASE_PATH.'/assets/plugins/';
+    protected string $configPath = '';
+    protected string $pluginName = '';
 
-    public function __construct()
+    public function __construct(string $pluginName)
     {
-        $this->setMFConfigPath(MFCConfig::getMFTVsPath());
-        $this->tvNamePlaceholder = MFCConfig::getTVPlaceholder();
-        $this->configExpPath = MFCConfig::getFilesPath().'configExample.php';
-        $this->tvHelper = new TVHelper();
+        $this->pluginName = $pluginName;
+        $this->configPath = $this->pluginsPath . $this->pluginName.'/config/';
     }
 
-    public function setMFConfigPath(string $mfConfigPath)
+    /**
+     * @throws Exception
+     */
+    public function buildConfig(string $tvName, string $tvManagerClassName, bool $forced)
     {
-        $this->mfConfigPath = $mfConfigPath;
+        $this->createTV($tvName,$forced);
+        $this->createConfig($tvName,$tvManagerClassName,$forced);
     }
 
-    public function getMFConfigPath(): string
+    /**
+     * @throws Exception
+     */
+    protected function createConfig(string $tvName, string $tvManagerClassName, bool $forced = false)
     {
-        return $this->mfConfigPath;
+        $newConfigPath = $this->configPath.$tvName.'.php';
+        if(!file_exists($newConfigPath) || $forced){
+            file_put_contents(
+                $newConfigPath,
+                '<?php '.PHP_EOL.PHP_EOL
+                .'return (new '.$tvManagerClassName.'())->getConfig(basename(__FILE__,\'.php\'));'
+            );
+        }else{
+            throw new Exception($tvName.' config already exist');
+        }
     }
 
-    public function buildConfig(string $tvName, string $tvManagerClassName)
+    /**
+     * @throws Exception
+     */
+    protected function createTV(string $tvName, bool $forced = false)
     {
-        $this->createTV($tvName);
-        $this->createConfig($tvName,$tvManagerClassName);
-    }
-
-    protected function createConfig(string $tvName,string $tvManagerClassName)
-    {
-        file_put_contents(
-            MFCConfig::getMFTVsPath().$tvName.'.php',
-            '<?php . \n \n (new '.$tvManagerClassName.'())->getConfig(basename(__FILE__,".php"));'
-        );
-    }
-
-    protected function createTV(string $tvName)
-    {
-        $this->tvHelper->createTV($tvName);
+        if(SiteTmplvar::where('name',$tvName)->doesntExist()){
+            SiteTmplvar::create(['type'=>'custom_tv:'.$this->pluginName,'name'=>$tvName]);
+        }else{
+            if($forced){
+                SiteTmplvar::where('name',$tvName)->update(['type'=>'custom_tv:'.$this->pluginName]);
+            }else{
+                throw new Exception($tvName.' tv already exist');
+            }
+        }
     }
 }
