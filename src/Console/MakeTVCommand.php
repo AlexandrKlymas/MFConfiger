@@ -2,7 +2,7 @@
 
 namespace EvolutionCMS\MFConfigure\Console;
 
-use EvolutionCMS\Models\SiteTmplvar;
+use EvolutionCMS\MFConfigure\Support\MFConfigureHelper;
 use Illuminate\Console\Command;
 
 class MakeTVCommand extends Command
@@ -15,7 +15,9 @@ class MakeTVCommand extends Command
     public function handle(){
         if(!empty($this->option('tv'))){
             $tvName = $this->option('tv');
-            SiteTmplvar::firstOrCreate(['type'=>'custom_tv:multifields','name'=>$tvName]);
+
+            (new MFConfigureHelper())->buildConfig($tvName);
+
             echo 'TV '.$tvName.' created successfully'.PHP_EOL;
         }else{
             echo 'please set TV name parameter --tv=YOURTVNAME example: --tv=mytvname'.PHP_EOL;
