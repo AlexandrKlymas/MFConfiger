@@ -5,7 +5,7 @@ namespace EvolutionCMS\MFConfigure;
 use EvolutionCMS\MFConfigure\Console\MFCCreateTVCommand;
 use EvolutionCMS\ServiceProvider;
 
-class MFCServiceProvider extends ServiceProvider
+class MFConfigureServiceProvider extends ServiceProvider
 {
     protected string $namespace = 'MFConfigure';
 
