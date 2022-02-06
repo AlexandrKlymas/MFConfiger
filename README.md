@@ -24,7 +24,7 @@ Evolution CMS plugin MultiFields конфиг менеджер
 
 Аргументы: `{tv_name}` имя TV, `{manager_class_name}` название класса конфиг-менеджера
 
-Опции:
+###Опции:
 
 `{--js}` (необязателен) переключит в режим для MultiFieldsJS, по умолчанию работает для MultiFields.
 
@@ -37,8 +37,6 @@ Evolution CMS plugin MultiFields конфиг менеджер
 Люблю ❤MultiFields.
 Очень удобно используя MultiFields в админ панели задавать необходимые настройки для пакетов и сервисов.
 Выполнив две команды получаем все блага MultiFields в своем коде.
-
-
 
 
 ------------
@@ -66,7 +64,8 @@ Now through this new config manager your packages or services get the ability to
 
 Arguments: `{tv_name}` TV name, `{manager_class_name}` config manager class name
 
-####Options:
+###Options:
+
 `{--js}` (optional) will switch to MultiFieldsJS mode, works for MultiFields by default.
 
 `{--f}` (optional) forces the TV type and config to be overwritten if they exist.
