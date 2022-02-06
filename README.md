@@ -1,5 +1,5 @@
 # MFConfigure
-------------
+
 Evolution CMS plugin MultiFields конфиг-менеджер
 
 ## Направление MultiFields на получение конфига из других источников
@@ -38,9 +38,10 @@ Evolution CMS plugin MultiFields конфиг-менеджер
 Очень удобно используя MultiFields в админ панели задавать необходимые настройки для пакетов и сервисов.
 Выполнив две команды получаем все блага MultiFields в своем коде.
 
+------------
 
 # MFConfigure
-------------
+
 Evolution CMS plugin MultiFields config manager
 
 ## Directing MultiFields to get config from other sources
