@@ -12,7 +12,7 @@ Evolution CMS plugin MultiFields конфиг-менеджер
 ## Использование
 
 ### Установка
-**core/** `php artisan package:installrequire klym/multifields-configure "*"`
+**/core/** `php artisan package:installrequire klym/multifields-configure "*"`
 
 ### Создание конфиг-менеджера
 Наследуем MFCManager и переопределяем ему метод getConfig()
@@ -20,7 +20,7 @@ Evolution CMS plugin MultiFields конфиг-менеджер
 Теперь через этот новый конфиг-менеджер Ваши пакеты или сервисы получают возможность контролировать конфиг MultiFields
 
 ### Команда для создания TV и конфига
-**core/** `php artisan mfc:create {tv_name} {manager_class_name} {--js} {--f}`
+**/core/** `php artisan mfc:create {tv_name} {manager_class_name} {--js} {--f}`
 
 ### Аргументы: 
 
@@ -36,7 +36,7 @@ Evolution CMS plugin MultiFields конфиг-менеджер
 
 ### Пример:
 
-**core/** `php artisan mfc:create mysupertv \EvolutionCMS\MFConfigure\Managers\MFCManager --js --f`
+**/core/** `php artisan mfc:create mysupertv \EvolutionCMS\MFConfigure\Managers\MFCManager --js --f`
 
 ## Зачем это?
 
@@ -60,7 +60,7 @@ So it is possible to return the config with dynamically changed parameters.
 ## Usage
 
 ### Installation
-**core/** `php artisan package:installrequire klym/multifields-configure "*"`
+**/core/** `php artisan package:installrequire klym/multifields-configure "*"`
 
 ### Create a config manager
 Inherit MFCManager and override its getConfig() method
@@ -68,7 +68,7 @@ The getConfig() method should return the config for MultiFields
 Now through this new config manager your packages or services get the ability to control the MultiFields config
 
 ### Command to create TV and config
-**core/** `php artisan mfc:create {tv_name} {manager_class_name} {--js} {--f}`
+**/core/** `php artisan mfc:create {tv_name} {manager_class_name} {--js} {--f}`
 
 ### Arguments:
 
@@ -84,7 +84,7 @@ Now through this new config manager your packages or services get the ability to
 
 ### Example:
 
-**core/** `php artisan mfc:create mysupertv \EvolutionCMS\MFConfigure\Managers\MFCManager --js --f`
+**/core/** `php artisan mfc:create mysupertv \EvolutionCMS\MFConfigure\Managers\MFCManager --js --f`
 
 ## Why is this?
 
