@@ -23,9 +23,11 @@ Evolution CMS plugin MultiFields конфиг менеджер
 `php artisan mfc:create {tv_name} {manager_class_name} {--js} {--f}` в **core/** каталоге
 
 Аргументы: `{tv_name}` имя TV, `{manager_class_name}` название класса конфиг-менеджера
-Опции: 
-`{--js}` необязателен, переключит в режим для MultiFieldsJS, по умолчанию работает для MultiFields.
-`{--f}` необязателен, принуждает перезаписать тип TV и конфиг если они существуют.
+
+####Опции: 
+`{--js}` (необязателен) переключит в режим для MultiFieldsJS, по умолчанию работает для MultiFields.
+
+`{--f}` (необязателен) принуждает перезаписать тип TV и конфиг если они существуют.
 
 Пример: `php artisan mfc:create mysupertv \EvolutionCMS\MFConfigure\Managers\MFCManager --js --f`
 
@@ -35,8 +37,10 @@ Evolution CMS plugin MultiFields конфиг менеджер
 Очень удобно используя MultiFields в админ панели задавать необходимые настройки для пакетов и сервисов.
 Выполнив две команды получаем все блага MultiFields в своем коде.
 
-------------
 
+
+
+------------
 Evolution CMS plugin MultiFields config manager
 
 ## Directing MultiFields to get config from other sources
@@ -60,9 +64,11 @@ Now through this new config manager your packages or services get the ability to
 `php artisan mfc:create {tv_name} {manager_class_name} {--js} {--f}` in **core/** directory
 
 Arguments: `{tv_name}` TV name, `{manager_class_name}` config manager class name
-Options:
-`{--js}` optional, will switch to MultiFieldsJS mode, works for MultiFields by default.
-`{--f}` is optional, forces overwriting the TV type and config if they exist.
+
+####Options:
+`{--js}` (optional) will switch to MultiFieldsJS mode, works for MultiFields by default.
+
+`{--f}` (optional) forces the TV type and config to be overwritten if they exist.
 
 Example: `php artisan mfc:create mysupertv \EvolutionCMS\MFConfigure\Managers\MFCManager --js --f`
 
