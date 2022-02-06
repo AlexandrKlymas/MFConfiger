@@ -1,10 +1,10 @@
 # MFConfigure
 ------------
-Evolution CMS plugin MultiFields конфиг менеджер
+Evolution CMS plugin MultiFields конфиг-менеджер
 
 ## Направление MultiFields на получение конфига из других источников
 ------------
-С помощью консольной комманды создает TV и файл конфига который направлен на конфиг-менеджер.
+С помощью консольной команды создает TV и файл конфига который направлен на конфиг-менеджер.
 Это позволяет использовать MultiFields фичи в других продуктах.
 Конфиг-менеджеру передается имя TV параметра, возвращается конфиг.
 Так предоставляется возможность вернуть конфиг с динамически изменёнными параметрами.
@@ -15,11 +15,11 @@ Evolution CMS plugin MultiFields конфиг менеджер
 `php artisan package:installrequire klym/multifields-configure "*"` в **core/** каталоге
 
 ### Создание конфиг-менеджера
-Наследуем MFCManager и переоределяем ему метод getConfig()
+Наследуем MFCManager и переопределяем ему метод getConfig()
 Метод getConfig() должен вернуть конфиг для MultiFields
 Теперь через этот новый конфиг-менеджер Ваши пакеты или сервисы получают возможность контролировать конфиг MultiFields
 
-### Команда для создание TV и конфига
+### Команда для создания TV и конфига
 `php artisan mfc:create {tv_name} {manager_class_name} {--js} {--f}` в **core/** каталоге
 
 Аргументы: `{tv_name}` имя TV, `{manager_class_name}` название класса конфиг-менеджера
@@ -44,7 +44,7 @@ Evolution CMS plugin MultiFields config manager
 
 ## Directing MultiFields to get config from other sources
 ------------
-Using the console command, it creates a TV and a config file that is directed to the config manager.
+Using the console command creates a TV and a config file that is directed to the config manager.
 This allows you to use the MultiFields feature in other products.
 The name of the TV parameter is passed to the config manager, the config is returned.
 So it is possible to return the config with dynamically changed parameters.
