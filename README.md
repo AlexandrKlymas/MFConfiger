@@ -22,7 +22,11 @@ Evolution CMS plugin MultiFields конфиг-менеджер
 ### Команда для создания TV и конфига
 `php artisan mfc:create {tv_name} {manager_class_name} {--js} {--f}` в **core/** каталоге
 
-Аргументы: `{tv_name}` имя TV, `{manager_class_name}` название класса конфиг-менеджера
+### Аргументы: 
+
+`{tv_name}` (обязателен) имя TV, 
+
+`{manager_class_name}` (обязателен) название класса конфиг-менеджера
 
 ### Опции:
 
@@ -30,7 +34,9 @@ Evolution CMS plugin MultiFields конфиг-менеджер
 
 `{--f}` (необязателен) принуждает перезаписать тип TV и конфиг если они существуют.
 
-Пример: `php artisan mfc:create mysupertv \EvolutionCMS\MFConfigure\Managers\MFCManager --js --f`
+### Пример:
+
+`php artisan mfc:create mysupertv \EvolutionCMS\MFConfigure\Managers\MFCManager --js --f`
 
 ## Зачем это?
 
@@ -40,7 +46,7 @@ Evolution CMS plugin MultiFields конфиг-менеджер
 
 ------------
 
-# MFConfigure
+#MFConfigure
 
 Evolution CMS plugin MultiFields config manager
 
@@ -64,7 +70,11 @@ Now through this new config manager your packages or services get the ability to
 ### Command to create TV and config
 `php artisan mfc:create {tv_name} {manager_class_name} {--js} {--f}` in **core/** directory
 
-Arguments: `{tv_name}` TV name, `{manager_class_name}` config manager class name
+### Arguments:
+
+`{tv_name}` (required) TV name,
+
+`{manager_class_name}` (required) config manager class name
 
 ### Options:
 
@@ -72,7 +82,9 @@ Arguments: `{tv_name}` TV name, `{manager_class_name}` config manager class name
 
 `{--f}` (optional) forces the TV type and config to be overwritten if they exist.
 
-Example: `php artisan mfc:create mysupertv \EvolutionCMS\MFConfigure\Managers\MFCManager --js --f`
+### Example:
+
+`php artisan mfc:create mysupertv \EvolutionCMS\MFConfigure\Managers\MFCManager --js --f`
 
 ## Why is this?
 
